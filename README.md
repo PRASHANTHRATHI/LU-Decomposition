@@ -35,11 +35,12 @@ Developed by: Prashanth.K
 RegisterNumber: 212223230152
 
 import numpy as np
-from scipy.linalg import lu
+from scipy.linalg import lu_factor,lu_solve
 A=np.array(eval(input()))
 B=np.array(eval(input()))
-C=np.linalg.solve(A,B)
-print(C)
+lu, piv = lu_factor(A)
+X= lu_solve((lu , piv),b)
+print(X)
 
 ```
 
